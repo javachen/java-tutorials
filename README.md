@@ -1,2 +1,0 @@
-# java-tutorials
-java tutorials

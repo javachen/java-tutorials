@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: producer
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-8761.com:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # 开放所有监控端点
+        include: '*'
+  endpoint:
+    health:
+      # 是否展示健康检查详情
+      show-details: always
+
+
+info:
+  app.name: spring-cloud-producer
+  company.name: www.javachen.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

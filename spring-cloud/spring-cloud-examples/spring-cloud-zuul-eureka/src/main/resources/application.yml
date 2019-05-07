@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: eureka-zuul
+
+server:
+  port: 9527
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-8761.com:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+zuul:
+  prefix: /
+  ignored-services: "*"
+  routes:
+    producer.serviceId: producer
+    producer.path: /producer/**

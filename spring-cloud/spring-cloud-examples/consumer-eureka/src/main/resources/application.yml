@@ -1,0 +1,16 @@
+server:
+  port: 9092
+
+spring:
+  application:
+    name: consumer-eureka
+
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-8761.com:8761/eureka/
+  instance:
+    preferIpAddress: true

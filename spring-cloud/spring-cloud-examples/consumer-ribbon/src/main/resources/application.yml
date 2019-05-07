@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: rest-consumer-ribbon
+
+server:
+  port: 9096
+
+ping-server:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:8081
+    ServerListRefreshInterval: 15000
+
+

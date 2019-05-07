@@ -1,0 +1,22 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: spring-cloud-eureka-server-security
+  security:
+    basic:
+      enabled: true # 开启基于HTTP basic的认证
+    user:
+      name: admin
+      password: 654321
+      roles: SYSTEM
+
+eureka:
+  instance:
+    hostname: eureka-8761.com
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
