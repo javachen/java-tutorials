@@ -1,0 +1,15 @@
+server:
+  port: 9096
+
+spring:
+  application:
+    name: consumer-hystrix-without-feign
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-8761.com:8761/eureka/
+  instance:
+    preferIpAddress: true

@@ -1,14 +1,14 @@
 spring:
   application:
-    name: myApp
+    name: spring-cloud-consul
   cloud:
     consul:
       host: localhost
       port: 8500
       discovery:
-        healthCheckPath: /my-health-check
-        healthCheckInterval: 20s
         enabled: true
-        instanceId: ${spring.application.name}:${random.value}
+        health-check-interval: 20s
+        instanceId: ${spring.application.name}:${server.port}
+
 server:
-  port: 0
+  port: 8000

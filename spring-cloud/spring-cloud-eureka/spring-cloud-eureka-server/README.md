@@ -50,17 +50,25 @@ public class EurekaServerApplication {
 server:
   port: 8761
 
+spring:
+  application:
+    name: spring-cloud-eureka-server
+
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka-8761.com
   client:
     registerWithEureka: false
     fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka-8761.com:8761/eureka/
 ~~~
 
-4、http://localhost:8761/
+4、http://eureka-8761.com:8761/
 
-5、HA
+## HA
+
+1、application.yml
 
 ~~~yml
 server:
@@ -80,18 +88,21 @@ eureka:
     fetchRegistry: false
 
 ---
-spring:
-  profiles: eureka-server
-
 server:
   port: 8761
 
+spring:
+  application:
+    name: spring-cloud-eureka-server
+
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka-8761.com
   client:
     registerWithEureka: false
     fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka-8761.com:8761/eureka/
 
 ---
 spring:
@@ -107,7 +118,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-        defaultZone: http://eureka-8761.com:8761/eureka/,http://eureka-8762.com:8762/eureka/,http://eureka-8763.com:8763/eureka/
+        defaultZone: http://eureka-8762.com:8762/eureka/,http://eureka-8763.com:8763/eureka/
 
 ---
 spring:
@@ -123,7 +134,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://eureka-8761.com:8761/eureka/,http://eureka-8762.com:8762/eureka/,http://eureka-8763.com:8763/eureka/
+      defaultZone: http://eureka-8761.com:8761/eureka/,http://eureka-8763.com:8763/eureka/
 
 ---
 spring:
@@ -139,5 +150,11 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://eureka-8761.com:8761/eureka/,http://eureka-8762.com:8762/eureka/,http://eureka-8763.com:8763/eureka/
+      defaultZone: http://eureka-8761.com:8761/eureka/,http://eureka-8762.com:8762/eureka/
 ~~~
+
+2、run server
+
+run EurekaServerApplication with  `--spring.profiles.active=eureka-server1`
+run EurekaServerApplication with  `--spring.profiles.active=eureka-server2`
+run EurekaServerApplication with  `--spring.profiles.active=eureka-server3`

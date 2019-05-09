@@ -18,5 +18,5 @@ zuul:
   prefix: /
   ignored-services: "*"
   routes:
-    producer.serviceId: producer
-    producer.path: /producer/**
+    provider.serviceId: provider
+    provider.path: /provider/**

@@ -1,7 +1,5 @@
 # spring-cloud-eureka-client
 
-## Config 
-
 1、Maven
 
 ~~~xml
@@ -45,7 +43,7 @@ public class EurekaClientApplication {
 
 3、application.yml
 
-~~~
+~~~yml
 spring:
   application:
     name: spring-cloud-eureka-client

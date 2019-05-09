@@ -1,6 +1,6 @@
 package com.javachen.utils;
 
-import com.baeldung.utils.controller.UtilsController;
+import com.javachen.utils.controller.UtilsController;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;

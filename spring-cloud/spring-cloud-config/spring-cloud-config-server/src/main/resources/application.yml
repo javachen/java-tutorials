@@ -1,0 +1,29 @@
+server:
+  port: 3344
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # 开放所有监控端点
+        include: '*'
+  endpoint:
+    health:
+      # 是否展示健康检查详情
+      show-details: always
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://eureka-8761.com:8761/eureka/
+
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          #          uri: ${user.dir}/configs
+          #GitHub上面的git仓库名字
+          uri: git@github.com:javachen/spring-cloud-config.git

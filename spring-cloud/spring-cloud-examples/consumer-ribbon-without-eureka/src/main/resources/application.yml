@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: consumer-ribbon-without-eureka
+
+server:
+  port: 9097
+
+ribbon:
+  eureka:
+    enabled: false #禁用eureka客户端
+
+provider:
+  ribbon:
+    listOfServers: localhost:8081
+    ServerListRefreshInterval: 15000

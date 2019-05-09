@@ -13,3 +13,8 @@ eureka:
       defaultZone: http://eureka-8761.com:8761/eureka/
   instance:
     preferIpAddress: true
+
+## 扩展 IPing 实现
+producer:
+  ribbon:
+    NFLoadBalancerPingClassName: com.javachen.ping.MyPing
