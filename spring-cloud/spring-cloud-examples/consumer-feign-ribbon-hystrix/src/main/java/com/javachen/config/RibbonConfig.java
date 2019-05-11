@@ -1,5 +1,6 @@
 package com.javachen.config;
 
+import com.javachen.rule.MyRule;
 import com.netflix.loadbalancer.IPing;
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.PingUrl;
@@ -16,6 +17,6 @@ public class RibbonConfig {
 
     @Bean
     public IRule ribbonRule() {
-        return new RandomRule();
+        return new MyRule();
     }
 }

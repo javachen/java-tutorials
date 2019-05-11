@@ -1,18 +1,18 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: provider
+  jpa:
+    # 让hibernate打印执行的SQL
+    show-sql: true
 
-server:
-  port: 8081
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://eureka-8761.com:8761/eureka/
-  #      defaultZone: http://eureka-8761.com:8761/eureka/,http://eureka-8762.com:8762/eureka/,http://eureka-8763.com:8763/eureka/
-  instance:
-    preferIpAddress: true
-
+logging:
+  level:
+    root: INFO
+    # 配置日志级别，让hibernate打印出执行的SQL参数
+    org.hibernate: INFO
 
 management:
   endpoints:
@@ -24,10 +24,3 @@ management:
     health:
       # 是否展示健康检查详情
       show-details: always
-
-
-info:
-  app.name: spring-cloud-provider
-  company.name: www.javachen.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$

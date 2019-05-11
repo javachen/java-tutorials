@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: consumer-ribbon
+
+server:
+  port: 9090
+
+ribbon:
+  eureka:
+    enabled: false #禁用eureka客户端
+
+service-provider:
+  ribbon:
+    # 负载均衡地址，配置多个
+    listOfServers: localhost:8080,eureka-8761.com:8080
+    ServerListRefreshInterval: 15000
+    NFLoadBalancerPingClassName: com.javachen.ping.MyPing

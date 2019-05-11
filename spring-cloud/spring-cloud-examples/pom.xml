@@ -17,18 +17,25 @@
 
     <modules>
         <module>provider</module>
+        <module>provider-eureka</module>
+
+        <module>consumer-ribbon</module>
+        <module>consumer-hystrix</module>
+
+
         <module>consumer</module>
         <module>consumer-eureka</module>
         <module>consumer-feign</module>
         <module>consumer-feign-ribbon</module>
         <module>consumer-feign-ribbon-hystrix</module>
-        <module>consumer-hystrix-without-feign</module>
-        <module>consumer-ribbon-without-eureka</module>
+
         <module>consumer-zuul</module>
 
         <module>spring-cloud-gateway</module>
         <module>spring-cloud-zuul-eureka</module>
         <module>consumer-feign-ribbon</module>
+        <module>user-api</module>
+
     </modules>
 
 </project>

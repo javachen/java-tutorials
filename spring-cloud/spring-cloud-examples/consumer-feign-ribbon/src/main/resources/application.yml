@@ -1,5 +1,5 @@
 server:
-  port: 9094
+  port: 9090
 
 spring:
   application:
@@ -8,7 +8,6 @@ spring:
 feign:
   hystrix:
     enabled：true
-
 
 eureka:
   client:
