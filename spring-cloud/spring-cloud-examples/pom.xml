@@ -33,7 +33,6 @@
 
         <module>spring-cloud-gateway</module>
         <module>spring-cloud-zuul-eureka</module>
-        <module>consumer-feign-ribbon</module>
         <module>user-api</module>
 
     </modules>
