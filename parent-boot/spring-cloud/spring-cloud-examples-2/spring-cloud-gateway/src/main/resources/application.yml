@@ -1,0 +1,21 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: spring-cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          #服务发现组件结合,通过 serviceId 转发到具体的服务实例
+          enabled: true
+      routes:
+        #自定义路由
+        - id: provider-api
+          uri: lb://PROVIDER-SERVICE
+          order: 1001
+          predicates:
+            - Path=/provider/**
+          filters:
+            # 必须加上StripPrefix=1
+            - StripPrefix=1

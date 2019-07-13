@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: provider-zookeeper
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+      discovery:
+        enabled: true
+
+server:
+  port: 8000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # 开放所有监控端点
+        include: '*'
+  endpoint:
+    health:
+      # 是否展示健康检查详情
+      show-details: always
+
+
+info:
+  app.name: spring-cloud-provider
+  company.name: www.javachen.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

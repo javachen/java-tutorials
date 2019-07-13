@@ -1,0 +1,21 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: consumer-feign-ribbon-hystrix
+
+feign:
+  hystrix:
+    enabled：true
+
+ribbon:
+  eureka:
+    enabled: false #禁用eureka客户端
+
+provider:
+  ribbon:
+    # 负载均衡地址，配置多个
+    listOfServers: localhost:8000,localhost:8001
+    ServerListRefreshInterval: 15000
+    NFLoadBalancerPingClassName: com.javachen.ping.MyPing

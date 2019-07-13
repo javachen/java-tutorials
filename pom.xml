@@ -11,14 +11,15 @@
 
     <modules>
         <module>parent-java</module>
-        <module>parent-boot-2</module>
-        <module>spring-boot</module>
-        <module>spring-cloud</module>
+        <module>parent-boot</module>
+        <module>parent-struts2</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <java.version>1.8</java.version>
 
         <junit.version>4.12</junit.version>
@@ -40,8 +41,22 @@
         <jackson.version>2.9.8</jackson.version>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <optional>true</optional>
+                <version>1.18.6</version>
+            </dependency>
             <!-- logging -->
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -98,4 +113,30 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>spring-boot</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>parent-boot</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>parent-java</id>
+            <modules>
+                <module>parent-java</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>parent-struts2</id>
+            <modules>
+                <module>parent-struts2</module>
+            </modules>
+        </profile>
+    </profiles>
 </project>

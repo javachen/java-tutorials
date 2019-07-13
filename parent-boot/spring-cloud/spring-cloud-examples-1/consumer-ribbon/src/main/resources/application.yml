@@ -1,0 +1,35 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: consumer-ribbon
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true # 开启Spring Cloud的重试功能
+
+ribbon:
+  eureka:
+    enabled: false #禁用eureka客户端
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 6000 # 设置hystrix的超时时间为6000ms
+
+provider:
+  ribbon:
+    # 负载均衡地址，配置多个
+    listOfServers: localhost:8000,localhost:8001
+    ServerListRefreshInterval: 15000
+    NFLoadBalancerPingClassName: com.javachen.ping.MyPing
+
+    ConnectTimeout: 250 # Ribbon的连接超时时间
+    ReadTimeout: 1000 # Ribbon的数据读取超时时间
+    OkToRetryOnAllOperations: true # 是否对所有操作都进行重试
+    MaxAutoRetriesNextServer: 1 # 切换实例的重试次数
+    MaxAutoRetries: 1 # 对当前实例的重试次数

@@ -14,25 +14,13 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <properties>
-        <guava.version>23.0</guava.version>
-        <lombok.version>1.16.12</lombok.version>
-    </properties>
 
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${guava.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <modules>
+        <module>cdi</module>
+        <module>apache-zookeeper</module>
+        <module>java-8</module>
+        <module>java-thread</module>
+        <module>asm</module>
+        <module>asm-test</module>
+    </modules>
 </project>

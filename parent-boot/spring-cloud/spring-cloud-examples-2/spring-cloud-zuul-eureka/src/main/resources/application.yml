@@ -1,0 +1,59 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: eureka-zuul
+#  sleuth:
+#    web:
+#      client:
+#        enabled: true
+#    sampler:
+#      probability: 1.0
+#  zipkin:
+#    base-url: http://192.168.10.100:9411/
+#    enabled: true
+#    sender:
+#      type: RABBIT
+#  rabbitmq:
+#    addresses: 192.168.10.100
+#    port: 5672
+#    username: admin
+#    password: 12345
+#    virtual-host: sleuth
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true #当你获取host时，返回的不是主机名，而是ip
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+
+zuul:
+  prefix: /v1
+  ignored-services: "*"
+  routes:
+    provider-api:
+      path: /provider/**
+      serviceId: provider
+
+ribbon:
+  retryable: true
+  ConnectTimeout: 250 # 连接超时时间(ms)
+  ReadTimeout: 2000 # 通信超时时间(ms)
+  OkToRetryOnAllOperations: true # 是否对所有操作重试
+  MaxAutoRetriesNextServer: 2 # 同一服务不同实例的重试次数
+  MaxAutoRetries: 1 # 同一实例的重试次数
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 6000 # 熔断超时时长：6000ms

@@ -1,0 +1,21 @@
+server:
+  port: 8701
+
+spring:
+  application:
+    name: spring-cloud-eureka-client
+  cloud:
+    inetutils:
+      ignoredInterfaces:  #禁用网卡
+        - docker0
+        - veth.*
+        - en0
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-8761.com:8761/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true #当你获取host时，返回的不是主机名，而是ip
+    instance-id: ${spring.application.name}:${server.port}

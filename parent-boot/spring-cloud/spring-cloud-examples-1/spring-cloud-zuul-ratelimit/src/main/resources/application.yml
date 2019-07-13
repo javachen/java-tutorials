@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: spring-cloud-zuul
+
+server:
+  port: 9527
+
+zuul:
+  routes:
+    serviceSimple:
+      path: /greeting/simple
+      url: forward:/
+    serviceAdvanced:
+      path: /greeting/advanced
+      url: forward:/
+  ratelimit:
+    enabled: true
+    repository: JPA
+    policy-list:
+      serviceSimple:
+      - limit: 5
+        refresh-interval: 60
+        type:
+        - origin
+      serviceAdvanced:
+      - limit: 1
+        refresh-interval: 2
+        type:
+        - origin
+  strip-prefix: true
+
+ribbon:
+  ConnectTimeout: 250 # 连接超时时间(ms)
+  ReadTimeout: 2000 # 通信超时时间(ms)
+  OkToRetryOnAllOperations: true # 是否对所有操作重试
+  MaxAutoRetriesNextServer: 2 # 同一服务不同实例的重试次数
+  MaxAutoRetries: 1 # 同一实例的重试次数
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 6000 # 熔断超时时长：6000ms

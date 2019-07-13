@@ -1,0 +1,20 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: consumer-eureka-all
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true #当你获取host时，返回的不是主机名，而是ip
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+
+ribbon:
+  ServerListRefreshInterval: 15000
+  NFLoadBalancerPingClassName: com.javachen.ping.MyPing

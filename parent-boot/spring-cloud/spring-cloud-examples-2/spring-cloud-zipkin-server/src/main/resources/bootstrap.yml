@@ -1,0 +1,37 @@
+#使用bootstrap.yml，初始化优先级高一些
+server:
+  port: 9411
+  compression: #不设置一个值，则初始化时候报空指针异常
+    enabled: true
+
+spring:
+  application:
+    name: spring-cloud-zipkin-server
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true #当你获取host时，返回的不是主机名，而是ip
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+
+
+#https://gitee.com/mirrors/zipkin/blob/master/zipkin-server/src/main/resources/zipkin-server-shared.yml
+#zipkin不用tomcat，使用的是armeria，默认端口为server.port。需要不需要依赖 spring-boot-starter-web 了
+armeria:
+  ports:
+    - port: 9411
+      protocols:
+        - http
+  gracefulShutdownQuietPeriodMillis: -1
+  gracefulShutdownTimeoutMillis: -1
+
+management:
+  metrics:
+    web:
+      server:
+        #避免访问zipkin页面报java.lang.IllegalArgumentException
+        auto-time-requests: false

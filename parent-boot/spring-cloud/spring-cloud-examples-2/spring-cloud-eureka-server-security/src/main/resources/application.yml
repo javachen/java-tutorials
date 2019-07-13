@@ -1,0 +1,33 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: spring-cloud-eureka-server
+  security:
+    basic:
+      enabled: true # 开启基于HTTP basic的认证
+    user:
+      name: admin
+      password: 654321
+      roles: SYSTEM
+  cloud:
+    inetutils:
+      ignoredInterfaces:  #禁用网卡
+        - docker0
+        - veth.*
+        - en0
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://eureka-8761.com:8761/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    #ip-address: 127.0.0.1
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+    lease-renewal-interval-in-seconds: 5 #每隔5秒剔除一次失效的服务
+    lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
+    enable-self-preservation: false #关闭自我保护
