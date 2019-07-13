@@ -1,6 +1,6 @@
-package com.neo.repository;
+package com.javachen.repository;
 
-import com.neo.model.User;
+import com.javachen.model.User;
 
 /**
  * Created by summer on 2017/5/5.

@@ -1,8 +1,8 @@
-package com.neo.sevice.impl;
+package com.javachen.sevice.impl;
 
-import com.neo.dao.UserInfoDao;
-import com.neo.model.UserInfo;
-import com.neo.sevice.UserInfoService;
+import com.javachen.dao.UserInfoDao;
+import com.javachen.model.UserInfo;
+import com.javachen.sevice.UserInfoService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

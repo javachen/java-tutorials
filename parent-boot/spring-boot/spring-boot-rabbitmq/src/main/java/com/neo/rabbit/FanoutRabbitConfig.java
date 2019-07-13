@@ -1,4 +1,4 @@
-package com.neo.rabbit;
+package com.javachen.rabbit;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;

@@ -1,4 +1,4 @@
-package com.neo.rabbit.topic;
+package com.javachen.rabbit.topic;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

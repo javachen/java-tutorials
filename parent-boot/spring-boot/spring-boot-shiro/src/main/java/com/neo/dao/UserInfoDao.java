@@ -1,6 +1,6 @@
-package com.neo.dao;
+package com.javachen.dao;
 
-import com.neo.model.UserInfo;
+import com.javachen.model.UserInfo;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserInfoDao extends CrudRepository<UserInfo,Long> {

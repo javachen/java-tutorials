@@ -1,6 +1,6 @@
-package com.neo.sevice;
+package com.javachen.sevice;
 
-import com.neo.model.UserInfo;
+import com.javachen.model.UserInfo;
 
 public interface UserInfoService {
     /**通过username查找用户信息;*/

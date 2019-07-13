@@ -1,8 +1,8 @@
-package com.neo.mapper;
+package com.javachen.mapper;
 
-import com.neo.model.User;
-import com.neo.enums.UserSexEnum;
-import com.neo.mapper.test2.User2Mapper;
+import com.javachen.model.User;
+import com.javachen.enums.UserSexEnum;
+import com.javachen.mapper.test2.User2Mapper;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -43,9 +43,9 @@ public class User2MapperTest {
 	public void testUpdate() throws Exception {
 		User user = userMapper.getOne(6l);
 		System.out.println(user.toString());
-		user.setNickName("neo");
+		user.setNickName("javachen");
 		userMapper.update(user);
-		Assert.assertTrue(("neo".equals(userMapper.getOne(6l).getNickName())));
+		Assert.assertTrue(("javachen".equals(userMapper.getOne(6l).getNickName())));
 	}
 
 }

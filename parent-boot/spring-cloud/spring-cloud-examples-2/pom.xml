@@ -11,7 +11,7 @@
 
     <groupId>com.javachen</groupId>
     <artifactId>spring-cloud-examples-2</artifactId>
-
+    <packaging>pom</packaging>
 
     <modules>
         <module>provider-eureka</module>

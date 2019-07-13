@@ -1,8 +1,8 @@
-package com.neo.repository.impl;
+package com.javachen.repository.impl;
 
 import com.mongodb.client.result.UpdateResult;
-import com.neo.repository.UserRepository;
-import com.neo.model.User;
+import com.javachen.repository.UserRepository;
+import com.javachen.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;

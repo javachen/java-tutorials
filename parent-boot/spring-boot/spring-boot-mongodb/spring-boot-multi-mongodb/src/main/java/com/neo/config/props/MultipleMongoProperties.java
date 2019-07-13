@@ -1,4 +1,4 @@
-package com.neo.config.props;
+package com.javachen.config.props;
 
 import org.springframework.boot.autoconfigure.mongo.MongoProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;

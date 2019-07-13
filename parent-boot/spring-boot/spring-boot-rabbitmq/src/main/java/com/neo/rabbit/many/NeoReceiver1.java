@@ -1,11 +1,11 @@
-package com.neo.rabbit.many;
+package com.javachen.rabbit.many;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 @Component
-@RabbitListener(queues = "neo")
+@RabbitListener(queues = "javachen")
 public class NeoReceiver1 {
 
     @RabbitHandler

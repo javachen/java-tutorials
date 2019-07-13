@@ -1,8 +1,8 @@
-package com.neo.model;
+package com.javachen.model;
 
 import java.io.Serializable;
 
-import com.neo.enums.UserSexEnum;
+import com.javachen.enums.UserSexEnum;
 
 public class User implements Serializable {
 

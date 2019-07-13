@@ -1,7 +1,7 @@
-package com.neo.rabbitmq;
+package com.javachen.rabbitmq;
 
-import com.neo.model.User;
-import com.neo.rabbit.object.ObjectSender;
+import com.javachen.model.User;
+import com.javachen.rabbit.object.ObjectSender;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class ObjectTest {
 	@Test
 	public void sendOject() throws Exception {
 		User user=new User();
-		user.setName("neo");
+		user.setName("javachen");
 		user.setPass("123456");
 		sender.send(user);
 	}

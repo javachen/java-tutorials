@@ -1,6 +1,6 @@
 package com.javachen.service;
 
-import com.neo.model.Customer;
+import com.javachen.model.Customer;
 
 import java.util.List;
 

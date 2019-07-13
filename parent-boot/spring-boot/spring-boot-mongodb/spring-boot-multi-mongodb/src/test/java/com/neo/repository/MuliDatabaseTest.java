@@ -1,8 +1,8 @@
-package com.neo.repository;
+package com.javachen.repository;
 
-import com.neo.model.User;
-import com.neo.repository.primary.PrimaryRepository;
-import com.neo.repository.secondary.SecondaryRepository;
+import com.javachen.model.User;
+import com.javachen.repository.primary.PrimaryRepository;
+import com.javachen.repository.secondary.SecondaryRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

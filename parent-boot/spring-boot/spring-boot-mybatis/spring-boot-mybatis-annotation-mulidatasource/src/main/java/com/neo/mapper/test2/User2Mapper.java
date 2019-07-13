@@ -1,9 +1,9 @@
-package com.neo.mapper.test2;
+package com.javachen.mapper.test2;
 
 import java.util.List;
 
-import com.neo.model.User;
-import com.neo.enums.UserSexEnum;
+import com.javachen.model.User;
+import com.javachen.enums.UserSexEnum;
 import org.apache.ibatis.annotations.*;
 
 public interface User2Mapper {

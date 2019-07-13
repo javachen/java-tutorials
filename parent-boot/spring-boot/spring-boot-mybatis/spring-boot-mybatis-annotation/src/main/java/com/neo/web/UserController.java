@@ -1,4 +1,4 @@
-package com.neo.web;
+package com.javachen.web;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.neo.model.User;
-import com.neo.mapper.UserMapper;
+import com.javachen.model.User;
+import com.javachen.mapper.UserMapper;
 
 @RestController
 public class UserController {

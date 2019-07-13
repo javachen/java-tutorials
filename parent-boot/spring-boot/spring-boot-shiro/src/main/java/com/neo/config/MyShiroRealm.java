@@ -1,9 +1,9 @@
-package com.neo.config;
+package com.javachen.config;
 
-import com.neo.model.SysPermission;
-import com.neo.model.SysRole;
-import com.neo.model.UserInfo;
-import com.neo.sevice.UserInfoService;
+import com.javachen.model.SysPermission;
+import com.javachen.model.SysRole;
+import com.javachen.model.UserInfo;
+import com.javachen.sevice.UserInfoService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;

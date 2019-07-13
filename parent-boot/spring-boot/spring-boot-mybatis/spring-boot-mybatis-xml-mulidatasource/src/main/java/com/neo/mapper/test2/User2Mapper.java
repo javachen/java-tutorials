@@ -1,8 +1,8 @@
-package com.neo.mapper.test2;
+package com.javachen.mapper.test2;
 
 import java.util.List;
 
-import com.neo.model.User;
+import com.javachen.model.User;
 
 public interface User2Mapper {
 	

@@ -1,10 +1,10 @@
-package com.neo.web;
+package com.javachen.web;
 
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.neo.model.User;
+import com.javachen.model.User;
 
 import javax.servlet.http.HttpSession;
 import java.util.UUID;

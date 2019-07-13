@@ -1,8 +1,8 @@
-package com.neo.mapper;
+package com.javachen.mapper;
 
 import java.util.List;
 
-import com.neo.model.User;
+import com.javachen.model.User;
 
 public interface UserMapper {
 	

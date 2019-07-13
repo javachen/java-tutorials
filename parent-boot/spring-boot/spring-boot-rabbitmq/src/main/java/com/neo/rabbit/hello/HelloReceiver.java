@@ -1,4 +1,4 @@
-package com.neo.rabbit.hello;
+package com.javachen.rabbit.hello;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

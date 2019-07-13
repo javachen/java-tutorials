@@ -1,4 +1,4 @@
-package com.neo.config;
+package com.javachen.config;
 
 import java.lang.reflect.Method;
 

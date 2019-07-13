@@ -1,4 +1,4 @@
-package com.neo.rabbit;
+package com.javachen.rabbit;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
@@ -15,7 +15,7 @@ public class RabbitConfig {
 
     @Bean
     public Queue neoQueue() {
-        return new Queue("neo");
+        return new Queue("javachen");
     }
 
     @Bean

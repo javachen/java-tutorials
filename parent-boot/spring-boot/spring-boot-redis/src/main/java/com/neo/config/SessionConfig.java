@@ -1,4 +1,4 @@
-package com.neo.config;
+package com.javachen.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;

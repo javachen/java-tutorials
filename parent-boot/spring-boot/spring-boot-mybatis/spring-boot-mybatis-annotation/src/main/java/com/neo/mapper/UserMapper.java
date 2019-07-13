@@ -1,8 +1,8 @@
-package com.neo.mapper;
+package com.javachen.mapper;
 
 import java.util.List;
 
-import com.neo.model.User;
+import com.javachen.model.User;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Result;
@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.neo.enums.UserSexEnum;
+import com.javachen.enums.UserSexEnum;
 
 public interface UserMapper {
 	

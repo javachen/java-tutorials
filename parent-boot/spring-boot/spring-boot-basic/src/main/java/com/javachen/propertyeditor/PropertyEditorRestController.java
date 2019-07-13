@@ -1,5 +1,8 @@
 package com.javachen.propertyeditor;
 
+import com.javachen.propertyeditor.creditcard.CreditCard;
+import com.javachen.propertyeditor.exotictype.editor.CustomExoticTypeEditor;
+import com.javachen.propertyeditor.exotictype.model.ExoticType;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,9 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.baeldung.propertyeditor.creditcard.CreditCard;
-import com.baeldung.propertyeditor.exotictype.editor.CustomExoticTypeEditor;
-import com.baeldung.propertyeditor.exotictype.model.ExoticType;
 
 @RestController
 @RequestMapping(value = "/property-editor")

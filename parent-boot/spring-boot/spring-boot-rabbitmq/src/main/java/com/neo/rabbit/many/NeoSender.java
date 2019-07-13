@@ -1,4 +1,4 @@
-package com.neo.rabbit.many;
+package com.javachen.rabbit.many;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +11,9 @@ public class NeoSender {
 	private AmqpTemplate rabbitTemplate;
 
 	public void send(int i) {
-		String context = "spirng boot neo queue"+" ****** "+i;
+		String context = "spirng boot javachen queue"+" ****** "+i;
 		System.out.println("Sender1 : " + context);
-		this.rabbitTemplate.convertAndSend("neo", context);
+		this.rabbitTemplate.convertAndSend("javachen", context);
 	}
 
 }

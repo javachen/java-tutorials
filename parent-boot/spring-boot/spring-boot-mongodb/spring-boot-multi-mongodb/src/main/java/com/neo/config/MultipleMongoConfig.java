@@ -1,8 +1,8 @@
-package com.neo.config;
+package com.javachen.config;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
-import com.neo.config.props.MultipleMongoProperties;
+import com.javachen.config.props.MultipleMongoProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.mongo.MongoProperties;

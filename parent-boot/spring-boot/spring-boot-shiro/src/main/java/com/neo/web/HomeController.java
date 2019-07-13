@@ -1,4 +1,4 @@
-package com.neo.web;
+package com.javachen.web;
 
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;

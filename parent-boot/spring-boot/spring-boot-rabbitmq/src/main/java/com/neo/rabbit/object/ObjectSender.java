@@ -1,6 +1,6 @@
-package com.neo.rabbit.object;
+package com.javachen.rabbit.object;
 
-import com.neo.model.User;
+import com.javachen.model.User;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

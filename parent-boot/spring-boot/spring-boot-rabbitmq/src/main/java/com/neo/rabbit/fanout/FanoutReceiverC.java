@@ -1,4 +1,4 @@
-package com.neo.rabbit.fanout;
+package com.javachen.rabbit.fanout;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

@@ -1,4 +1,4 @@
-package com.neo.web;
+package com.javachen.web;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;

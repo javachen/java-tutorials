@@ -1,4 +1,4 @@
-package com.neo.model;
+package com.javachen.model;
 
 import java.io.Serializable;
 

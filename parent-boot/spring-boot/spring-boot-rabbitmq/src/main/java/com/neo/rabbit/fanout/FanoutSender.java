@@ -1,4 +1,4 @@
-package com.neo.rabbit.fanout;
+package com.javachen.rabbit.fanout;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
-package com.neo;
+package com.javachen;
 
-import com.neo.model.User;
+import com.javachen.model.User;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,15 +35,15 @@ public class TestRedis {
         User user=new User("aa@126.com", "aa", "aa123456", "aa","123");
         ValueOperations<String, User> operations=redisTemplate.opsForValue();
         operations.set("com.neox", user);
-        operations.set("com.neo.f", user,1, TimeUnit.SECONDS);
+        operations.set("com.javachen.f", user,1, TimeUnit.SECONDS);
         Thread.sleep(1000);
-        //redisTemplate.delete("com.neo.f");
-        boolean exists=redisTemplate.hasKey("com.neo.f");
+        //redisTemplate.delete("com.javachen.f");
+        boolean exists=redisTemplate.hasKey("com.javachen.f");
         if(exists){
         	System.out.println("exists is true");
         }else{
         	System.out.println("exists is false");
         }
-       // Assert.assertEquals("aa", operations.get("com.neo.f").getUserName());
+       // Assert.assertEquals("aa", operations.get("com.javachen.f").getUserName());
     }
 }
