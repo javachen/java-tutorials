@@ -10,9 +10,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>parent-java</module>
-        <module>parent-boot</module>
-        <module>parent-struts2</module>
+        <!--        <module>parent-java</module>-->
+        <module>spring-boot</module>
+        <module>spring-cloud</module>
+        <module>spring-cloud-alibaba</module>
     </modules>
 
     <properties>
@@ -31,8 +32,6 @@
         <logback.version>1.1.7</logback.version>
         <log4j.version>1.2.17</log4j.version>
 
-
-        <commons-fileupload.version>1.3</commons-fileupload.version>
         <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
         <jstl-api.version>1.2</jstl-api.version>
         <javax.servlet.jsp-api.version>2.3.1</javax.servlet.jsp-api.version>
@@ -41,22 +40,8 @@
         <jackson.version>2.9.8</jackson.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
-
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <optional>true</optional>
-                <version>1.18.6</version>
-            </dependency>
             <!-- logging -->
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -117,11 +102,18 @@
     <profiles>
         <profile>
             <id>spring-boot</id>
+            <modules>
+                <module>spring-boot</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>spring-cloud</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <modules>
-                <module>parent-boot</module>
+                <module>spring-cloud</module>
             </modules>
         </profile>
 
@@ -131,12 +123,31 @@
                 <module>parent-java</module>
             </modules>
         </profile>
-
-        <profile>
-            <id>parent-struts2</id>
-            <modules>
-                <module>parent-struts2</module>
-            </modules>
-        </profile>
     </profiles>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>repository.springframework.maven.release</id>
+            <name>Spring Framework Maven Release Repository</name>
+            <url>http://maven.springframework.org/milestone/</url>
+        </repository>
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring Maven MILESTONE Repository</name>
+            <url>http://repo.spring.io/libs-milestone</url>
+        </repository>
+        <repository>
+            <id>spring-release</id>
+            <name>Spring Maven RELEASE Repository</name>
+            <url>http://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
 </project>
