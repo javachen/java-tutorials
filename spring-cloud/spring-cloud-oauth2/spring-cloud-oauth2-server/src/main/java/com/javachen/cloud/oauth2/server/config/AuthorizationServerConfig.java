@@ -26,8 +26,10 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     private TokenStore tokenStore;
+
     @Autowired
     private AuthenticationManager authenticationManager;
+
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -44,12 +46,12 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .withClient("web")
                 .resourceIds("web")
                 .secret(finalSecret)
-                .redirectUris("http://localhost:8080/")
+                .redirectUris("http://localhost:8000/")
                 .authorities("ROLE_ADMIN", "ROLE_USER")
                 .accessTokenValiditySeconds(3600)//配置访问token的有效期
-                .refreshTokenValiditySeconds(3600)//配置刷新token的有效期
+                .refreshTokenValiditySeconds(36000)//配置刷新token的有效期
                 .authorizedGrantTypes("password", "refresh_token", "authorization_code")
-                .scopes("all")
+                .scopes("read", "write", "trust")
         ;
     }
 
@@ -71,14 +73,15 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         return new RedisTokenStore(redisConnectionFactory);
     }
 
-//    /**
-//     * 谁能访问token
-//     *
-//     * @param security
-//     * @throws Exception
-//     */
-//    @Override
-//    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-//        security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
-//    }
+
+    /**
+     * 谁能访问token
+     *
+     * @param security
+     * @throws Exception
+     */
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
+    }
 }

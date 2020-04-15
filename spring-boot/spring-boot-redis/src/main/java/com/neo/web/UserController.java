@@ -1,4 +1,4 @@
-package com.javachen.web;
+package com.javachen.boot.basic.web;
 
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.RequestMapping;

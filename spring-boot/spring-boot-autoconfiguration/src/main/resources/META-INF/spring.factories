@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.javachen.autoconfiguration.MySQLAutoconfiguration
+  com.javachen.boot.autoconfiguration.MySQLAutoconfiguration

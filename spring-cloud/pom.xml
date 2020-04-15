@@ -20,7 +20,6 @@
     </properties>
 
     <modules>
-        <module>spring-cloud-archaius</module>
         <module>spring-cloud-consul</module>
         <module>spring-cloud-config</module>
         <module>spring-cloud-oauth2</module>

@@ -1,4 +1,4 @@
-package com.javachen.web;
+package com.javachen.boot.basic.web;
 
 
 

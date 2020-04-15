@@ -5,14 +5,15 @@ spring:
   application:
     name: spring-cloud-oauth2-resource
 
-security:
-  oauth2:
-    resource:
-      user-info-uri: http://localhost:9999/user/info
-      token-info-uri: http://localhost:9999/oauth/check_token
-      client:
-        access-token-uri: http://localhost:9999/oauth/token
-        client-id: web
-        client-secret: secret
-        grant-type: authorization_code,password,refresh_token
-        scope: all
+#security:
+#  oauth2:
+#    resource:
+#      user-info-uri: http://localhost:9999/user/info
+#      token-info-uri: http://localhost:9999/oauth/check_token
+#      client-id: web
+#      client-secret: secret
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth: DEBUG
