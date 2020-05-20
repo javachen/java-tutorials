@@ -1,0 +1,52 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <title>Title</title>
+    <style type="text/css">
+        .wrapper {
+            width: 500px;
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        label {
+            padding-left: 0 !important
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row wrapper">
+        <form th:action="@{/login}" method="post">
+            <fieldset>
+                <legend>Login</legend>
+
+                <div th:if="${param.error}">
+                    <p style="color: red" th:text="${session[SPRING_SECURITY_LAST_EXCEPTION]}"></p>
+                </div>
+                <div th:if="${param.logout}">
+                    <p style="color: green"> You have been logged out.</p>
+                </div>
+
+                <p>Example user: user / password</p>
+                <label class="col-sm-4">Username</label>
+                <span class="col-sm-8"><input class="form-control" type='text' name='username' value=''
+                                              required/></span>
+                <br/><br/>
+                <label class="col-sm-4">Password</label>
+                <span class="col-sm-8"><input class="form-control" type='password' name='password' required/></span>
+                <br/><br/>
+                <div class="form-actions">
+                    <input class="btn btn-primary" name="submit" type="submit"/>
+                    <a class="btn btn-primary" th:href="@{/registration.html}">注册</a>
+                    <a class="btn btn-primary" th:href="@{/forgetPassword.html}">重置密码</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

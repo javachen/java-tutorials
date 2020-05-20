@@ -1,0 +1,13 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: spring-cloud-oauth2-service
+
+  redis:
+    host: 192.168.1.75
+    database: 3
+    password: wesine
+    port: 6379
+

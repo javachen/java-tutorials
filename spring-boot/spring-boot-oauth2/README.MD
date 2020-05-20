@@ -1,1 +1,0 @@
-https://github.com/oktadeveloper/okta-spring-boot-authz-server-example

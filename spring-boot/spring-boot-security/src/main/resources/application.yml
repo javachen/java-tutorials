@@ -1,0 +1,11 @@
+#security.oauth2.client.client-id=client
+#security.oauth2.client.client-secret=secret
+
+spring:
+#  thymeleaf:
+#    cache: false
+  security:
+    user:
+      password: password
+#  autoconfigure:
+#    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration

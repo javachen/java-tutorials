@@ -1,0 +1,64 @@
+import com.javachen.springboot.drools.model.TaxiRide;
+import com.javachen.springboot.drools.model.Fare;
+import java.util.*;
+
+//相当于全局变量声明，多个规则文件中可共享该变量
+//要注意的是：共享全局变量建议不要用Integer这种"简单"类型，这样无法在规则文件中修改变量的"值"，建议用复杂类型，比如：AtomicInteger
+global Fare rideFare;
+dialect  "mvel"
+
+//函数示例
+function void print(String messgae){
+    System.out.println(messgae);
+}
+
+rule "Calculate Taxi Fare - Scenario 1"
+    when
+        taxiRideInstance:TaxiRide(isNightSurcharge == false && distanceInMile < 10);
+    then
+       	rideFare.setNightSurcharge(0L);
+       	rideFare.setRideFare(70L);
+end
+
+rule "Calculate Taxi Fare - Scenario 2"
+    when
+        taxiRideInstance:TaxiRide(isNightSurcharge == true && distanceInMile < 10);
+    then
+       	rideFare.setNightSurcharge(30L);
+       	rideFare.setRideFare(70L);
+end
+
+
+rule "Calculate Taxi Fare - Scenario 3"
+    when
+        taxiRideInstance:TaxiRide(isNightSurcharge == false && distanceInMile >= 10 && distanceInMile < 100);
+    then
+       	rideFare.setNightSurcharge(0L);
+       	rideFare.setRideFare(70+(2*taxiRideInstance.getDistanceInMile()));
+end
+
+
+rule "Calculate Taxi Fare - Scenario 4"
+    when
+        taxiRideInstance:TaxiRide(isNightSurcharge == true && distanceInMile >= 10 && distanceInMile < 100);
+    then
+       	rideFare.setNightSurcharge(30+taxiRideInstance.getDistanceInMile());
+       	rideFare.setRideFare(70+(2*taxiRideInstance.getDistanceInMile()));
+end
+
+
+rule "Calculate Taxi Fare - Scenario 5"
+    when
+        taxiRideInstance:TaxiRide(isNightSurcharge == false && distanceInMile >= 100);
+    then
+       	rideFare.setNightSurcharge(0L);
+       	rideFare.setRideFare((long) (70L+(1.5*taxiRideInstance.getDistanceInMile())));
+end
+
+rule "Calculate Taxi Fare - Scenario 6"
+    when
+        taxiRideInstance:TaxiRide(isNightSurcharge == true && distanceInMile >= 100);
+    then
+       	rideFare.setNightSurcharge(30L+taxiRideInstance.getDistanceInMile());
+       	rideFare.setRideFare((long) (70L+(1.5*taxiRideInstance.getDistanceInMile())));
+end
