@@ -1,24 +1,16 @@
 server:
   port: 8080
-  servlet:
-    session:
-      cookie:
-        name: OAUTH2-CLIENT-SESSIONID #防止Cookie冲突，冲突会导致登录验证不通过
-spring:
-  application:
-    name: spring-cloud-oauth2-service
 
-# Configure the Authorization Server and User Info Resource Server details
 security:
   basic:
     enabled: false
   oauth2:
-    client:
-      client-id: client
-      client-secret: secret
-      access-token-uri: http://localhost:9999/oauth/token
-      user-authorization-uri: http://localhost:9999/oauth/authorize
-      client-authentication-scheme: form
     resource:
-      user-info-uri: http://localhost:8000/user/info
-      prefer-token-info: false
+      tokenInfoUri: http://localhost:9999/oauth/check_token
+      userInfoUri: http://localhost:8000/user/me
+    client:
+      accessTokenUri: http://localhost:9999/oauth/token
+      userAuthorizationUri: http://localhost:9999/oauth/authorize
+      clientId: web
+      clientSecret: secret
+      scope: read,write,trust

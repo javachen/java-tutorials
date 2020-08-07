@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestOperations;
 
+import java.security.Principal;
+
 @RestController
 public class SiteController {
 
@@ -19,10 +21,16 @@ public class SiteController {
         return "Hello!";
     }
 
-    @GetMapping("/person")
+    @GetMapping("/user")
     public String person() {
-        String personResourceUrl = "http://localhost:8000/user/person";
+        String personResourceUrl = "http://localhost:9999/user/me";
         return restOperations.getForObject(personResourceUrl, String.class);
+    }
+
+    @GetMapping("/user/me")
+    public Principal user(Principal principal) {
+        System.out.println(principal);
+        return principal;
     }
 
     @PreAuthorize("hasRole('ADMIN')")
